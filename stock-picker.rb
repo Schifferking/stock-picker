@@ -11,10 +11,10 @@ def stock_picker(stock_prices)
   end
 
   # Calculate the profits
-  profits_copy = profits.map {|profit| profit.last - profit.min }
-  highest_profit = profits_copy.max
+  profits_calculated = profits.map {|profit| profit.last - profit.min }
+  highest_profit = profits_calculated.max
 
-  hp_index = profits_copy.index(highest_profit)
+  hp_index = profits_calculated.index(highest_profit)
 
   # Return the indices of the best days to buy and sell
   [stock_prices.index(profits[hp_index].first), stock_prices.index(profits[hp_index].last)]
